@@ -6,3 +6,17 @@
     font-style: normal;
     font-display: swap;
 }
+
+body {
+    display: flex;
+    height: 100vh;
+}
+
+.image-container {
+    width: 30%;
+    height: 100%;
+}
+
+.image-container img {
+    height: 100%;
+}
