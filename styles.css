@@ -19,6 +19,7 @@ body {
 }
 
 .image-container {
+    background-image: url("images/forest-banner.jpg");
     flex-shrink: 1;
     width: 30%;
 }
@@ -87,7 +88,7 @@ button {
     color: #fff;
     border: none;
     cursor: pointer;
-    width: 300px;
+    width: min(300px, 50%);
     height: 50px;
     border-radius: 10px;
     font-weight: bold;
@@ -96,7 +97,7 @@ button {
 p.bold-font {
     font-weight: bold;
     max-inline-size: 66ch;
-    font-size: var(--font-size);
+    font-size: calc(var(--font-size) * 0.85);
 }
 
 p.log-in-para, button {
