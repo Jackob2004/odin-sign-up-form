@@ -18,14 +18,41 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.image-container {
+.banner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-image: url("images/forest-banner.jpg");
     flex-shrink: 1;
     width: 30%;
+    height: 100%;
 }
 
-.image-container {
-    height: 100%;
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 12vh;
+    padding: 10px;
+    background-color: #00000060;
+}
+
+.logo-container p {
+    color: white;
+    font-family: 'Norse', serif;
+    font-size: calc(var(--font-size) * 3);
+}
+
+.logo-container img {
+    width: max(50px, 5vw);
+}
+
+.credits {
+    margin-top: auto;
+    margin-bottom: 10px;
+    color: white;
+    text-align: center;
 }
 
 .form-container {
@@ -119,6 +146,15 @@ button {
     text-decoration: none;
 }
 
+.credits :link {
+    color: white;
+    text-decoration: underline;
+}
+
+.credits :visited {
+    color: gray;
+}
+
 input:invalid {
     border: 2px solid red;
 }
@@ -146,6 +182,7 @@ input:valid + span:before {
 input:focus {
     outline: none;
     border: 2px solid blue;
+    box-shadow: 3px 5px 16px 15px rgba(0, 0, 0, 0.06);
 }
 
 .password-help {
