@@ -19,29 +19,32 @@
         <br>
         <p class="bold-font">You know you want to.</p>
 
-        <form action="" method="get" id="signup-form">
-            <h2>Let's do this!</h2>
+        <form action="" method="post" id="signup-form">
+            <p>Required fields are followed by <strong><span aria-label="required">*</span></strong>.</p>
 
             <div class="controls-container">
 
                 <p>
-                    <label for="first_name">First Name</label>
+                    <label for="first_name">First Name </label>
                     <input type="text" name="first_name" id="first_name" maxlength="35" pattern="^[A-Z]?[a-z]+$">
+                    <span></span>
                 </p>
 
                 <p>
-                    <label for="last_name">Last Name</label>
+                    <label for="last_name">Last Name </label>
                     <input type="text" name="last_name" id="last_name" maxlength="35" pattern="^[A-Z]?[a-z]+$" >
+                    <span></span>
                 </p>
 
                 <p>
-                    <label for="email">Email</label>
+                    <label for="email">Email <strong><span aria-label="required">*</span></strong></label>
                     <input type="email"
                            name="email"
                            id="email"
                            placeholder="example@domain.com"
                            maxlength="254"
                            required>
+                    <span></span>
                 </p>
 
                 <p>
@@ -51,27 +54,36 @@
                            id="phone_number"
                            placeholder="123-4567-8901"
                            pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}">
+                    <span></span>
                 </p>
 
                 <p>
-                    <label for="password">Password</label>
-                    <!-- must contain one digit from 1 to 9, one lowercase letter, one uppercase letter,
-                         one special character, no space, and it must be 8-16 characters long -->
+                    <label for="password">Password <strong><span aria-label="required">*</span></strong></label>
                     <input type="password"
                            name="password"
                            id="password"
                            pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$"
+                           aria-describedby="pwd-help"
                            required>
+                    <span></span>
+                    <span id="pwd-help" class="password-help">
+                        Must contain: one digit from 1 to 9, one lowercase letter, one uppercase letter,
+                        one special character, no space, and it must be 8-16 characters long
+                    </span>
                 </p>
 
                 <p>
-                    <label for="confirm_password">Confirm Password</label>
+                    <label for="confirm_password">Confirm Password <strong><span aria-label="required">*</span></strong></label>
                     <input type="password"
                            name="confirm_password"
                            id="confirm_password"
                            pattern="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$"
+                           aria-describedby="pwd-help2"
                            required>
+                    <span></span>
+                    <span id="pwd-help2" class="password-help">Must match the password field</span>
                 </p>
+
             </div>
 
         </form>

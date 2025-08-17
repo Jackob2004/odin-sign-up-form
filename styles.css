@@ -24,13 +24,8 @@ body {
     width: 30%;
 }
 
-.image-container,
-img {
+.image-container {
     height: 100%;
-}
-
-img {
-    width: 100%;
 }
 
 .form-container {
@@ -46,6 +41,24 @@ form > * {
     margin-left: 50px;
 }
 
+form {
+    background-color: #fff;
+    width: 100%;
+    padding: 15px 0;
+    margin-top: 60px;
+    color: #1f2937;
+    box-shadow: 2px 4px 16px rgba(0,0,0,.06);
+}
+
+form p {
+    margin-bottom: 15px;
+}
+
+form ~ *,
+form {
+    margin-bottom: 40px;
+}
+
 .controls-container {
     display: flex;
     flex-wrap: wrap;
@@ -54,33 +67,24 @@ form > * {
 
 .controls-container p {
     display: flex;
-    flex-direction: column;
+    flex-flow: row wrap;
     width: 50%;
     margin-bottom: 15px;
     font-size: calc(var(--font-size) * 0.7);
+}
+
+input, label {
+    display: block;
+}
+
+label {
+    width: 100%;
 }
 
 input {
     width: 80%;
     border-radius: 5px;
     border: 1px solid #bdb7b7;
-}
-
-form {
-    background-color: #fff;
-    width: 100%;
-    padding: 15px 0;
-    margin-top: 60px;
-    color: #1f2937;
-}
-
-form h2 {
-    margin-bottom: 15px;
-}
-
-form ~ *,
-form {
-    margin-bottom: 40px;
 }
 
 button {
@@ -100,7 +104,8 @@ p.bold-font {
     font-size: calc(var(--font-size) * 0.85);
 }
 
-p.log-in-para, button {
+p.log-in-para,
+button {
     font-size: calc(var(--font-size) * 0.75);
 }
 
@@ -112,4 +117,56 @@ p.log-in-para, button {
 
 :visited {
     text-decoration: none;
+}
+
+input:invalid {
+    border: 2px solid red;
+}
+
+input + span {
+    position: relative;
+}
+
+input + span:before {
+    position: absolute;
+    right: max(-2.5vw, -25px);
+    top: 4px;
+}
+
+input:invalid + span:before {
+    content: "✖";
+    color: red;
+}
+
+input:valid + span:before {
+    content: "✓";
+    color: green;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid blue;
+}
+
+.password-help {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    pointer-events: none;
+
+    background-color: #b9b64b;
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    width: 500px;
+    transition: opacity 0.3s ease;
+}
+
+input[type="password"]:invalid:hover ~ .password-help,
+input[type="password"]:invalid:focus ~ .password-help {
+    position: absolute;
+    right: calc(50vw - 250px);
+    top: 1vh;
+    left: auto;
+    opacity: 1;
 }
